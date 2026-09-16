@@ -9,10 +9,13 @@ echo "      LivingGlass Setup & Launch          "
 echo "=========================================="
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-FRONTEND_DIR="${SCRIPT_DIR}/frontend"
+APP_DIR="$( cd "${SCRIPT_DIR}/.." && pwd )"
+
+FRONTEND_DIR="${APP_DIR}/frontend"
 if [ ! -d "$FRONTEND_DIR" ]; then
-    FRONTEND_DIR="${SCRIPT_DIR}"
+    FRONTEND_DIR="${APP_DIR}"
 fi
+
 HTML_PATH="${FRONTEND_DIR}/index.html"
 CONFIG_PATH="${FRONTEND_DIR}/config.js"
 
@@ -26,8 +29,8 @@ if [ ! -f "$CONFIG_PATH" ]; then
     exit 1
 fi
 
-
 echo "[✓] 設定ファイルおよびダッシュボードHTMLを確認しました。"
+echo "    HTML: ${HTML_PATH}"
 
 # ブラウザコマンドの検出
 BROWSER_CMD=""

@@ -7,12 +7,15 @@ Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "      LivingGlass Setup & Launch          " -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 
-# 1. パスの確認
+# 1. パスの確認 (app/scripts -> app/frontend を検出)
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$FrontendDir = Join-Path $ScriptDir "frontend"
+$AppDir = Split-Path -Parent $ScriptDir
+
+$FrontendDir = Join-Path $AppDir "frontend"
 if (-not (Test-Path $FrontendDir)) {
-    $FrontendDir = $ScriptDir
+    $FrontendDir = $AppDir
 }
+
 $HtmlPath = Join-Path $FrontendDir "index.html"
 $ConfigPath = Join-Path $FrontendDir "config.js"
 
@@ -26,8 +29,8 @@ if (-not (Test-Path $ConfigPath)) {
     exit 1
 }
 
-
 Write-Host "[✓] 設定ファイルおよびダッシュボードHTMLを確認しました。" -ForegroundColor Green
+Write-Host "    HTML: $HtmlPath" -ForegroundColor Gray
 
 # 2. 利用可能なブラウザの検出 (Chrome または Edge)
 $BrowserPath = $null
@@ -75,7 +78,7 @@ try {
     $Shortcut = $WshShell.CreateShortcut($ShortcutPath)
     $Shortcut.TargetPath = $BrowserPath
     $Shortcut.Arguments = $Arguments
-    $Shortcut.WorkingDirectory = $ScriptDir
+    $Shortcut.WorkingDirectory = $FrontendDir
     $Shortcut.Description = "LivingGlass Kiosk Dashboard"
     $Shortcut.Save()
     Write-Host "[✓] スタートアップに自動起動ショートカットを登録しました: $ShortcutPath" -ForegroundColor Green
