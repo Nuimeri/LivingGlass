@@ -1,4 +1,4 @@
-# [pj-name] bk
+# LivingGlass bk
 
 このディレクトリはバックアップファイルを格納します。
 

@@ -1,4 +1,4 @@
-# [pj-name] src
+# LivingGlass src
 
 このディレクトリはバックエンドのソースコードを格納します。
 

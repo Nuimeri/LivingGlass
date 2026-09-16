@@ -1,4 +1,4 @@
-# [pj-name] migrations
+# LivingGlass migrations
 
 このディレクトリはDBマイグレーション用SQLファイルを格納します。
 

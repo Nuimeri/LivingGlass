@@ -1,4 +1,4 @@
-# [pj-name] src-client
+# LivingGlass src-client
 
 このディレクトリはフロントエンドのソースコードを格納します。
 

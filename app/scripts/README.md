@@ -1,4 +1,4 @@
-# [pj-name] scripts
+# LivingGlass scripts
 
 このディレクトリは各種スクリプトやツールを格納します。
 

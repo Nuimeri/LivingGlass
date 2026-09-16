@@ -1,4 +1,4 @@
-# [pj-name] issue
+# LivingGlass issue
 
 このディレクトリは課題管理やレビュー記録を格納します。
 
