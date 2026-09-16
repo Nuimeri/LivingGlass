@@ -1,0 +1,5 @@
+{
+  "name": "[pj-name]-template",
+  "description": "[pj-name]構造テンプレート用 package.json（プロジェクト名に置換してください）",
+  "version": "0.1.0"
+}
